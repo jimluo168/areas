@@ -1,0 +1,13 @@
+.vscode/
+.idea/
+config/
+node_modules/
+src/
+test/
+.babelrc
+.editorconfig
+.gitignore
+.jshintrc
+.npmrc
+.npmignore
+package.json

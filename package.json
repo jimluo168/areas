@@ -1,0 +1,25 @@
+{
+  "name": "advanpro-area-oss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "area_resolve.js",
+  "scripts": {
+    "test": "npm run build && mocha --compilers js:babel-core/register -t 1500000 test/**/*.js",
+    "build": "babel src -d lib --source-maps",
+    "start": "npm run build && node lib/area_resolve.js"
+  },
+  "bin": {
+    "advanpro-uc-app": "./lib/area_resolve.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-node8": "^1.2.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
+}
