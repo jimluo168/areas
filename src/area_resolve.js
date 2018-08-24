@@ -28,6 +28,7 @@ let hasCity = false
 let data_json = []
 let province_json = {}
 let city_json = {}
+let area_code =0
 let i = 0
 for (let code in data) {
   if (!(code % 1e4)) {     //获取所有的省级行政单位
@@ -131,9 +132,14 @@ for (let code in data) {
 
 data_json.push(Object.assign({}, province_json))
 
-console.log(data_json)
 
-let data_str = JSON.stringify(data_json)
+let last_result = {
+  code:200,
+  data: data_json,
+  success: true
+}
+
+let data_str = JSON.stringify(last_result)
 
 mkdirsSync(Path.join(process.cwd(), 'areas/town'))
 
@@ -155,7 +161,12 @@ for (let town_file of town_files) {
     })
   }
 
-  let town_data_json_str = JSON.stringify(town_data_json)
+  let town_last_result = {
+    code:200,
+    data: town_data_json,
+    success: true
+  }
+  let town_data_json_str = JSON.stringify(town_last_result)
   FileSystem.writeFileSync(Path.join(process.cwd(), 'areas/town/' + town_file), town_data_json_str)
 
 }
