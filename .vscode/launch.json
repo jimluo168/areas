@@ -20,6 +20,23 @@
       "outFiles": [
         "${workspaceRoot}/lib/**/*.js"
       ]
+    },
+    {
+      "name": "Launc Numbers",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/lib/numbers_test.js",
+      "stopOnEntry": false,
+      "args": [],
+      "preLaunchTask": "build",
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceRoot}/lib/**/*.js"
+      ]
     }
   ]
 }

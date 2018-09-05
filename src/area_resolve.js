@@ -13,6 +13,9 @@ function mkdirsSync(dirname) {
   }
 }
 
+function test() {
+    console.log(`abc`)
+}
 
 let list_code = FileSystem.readFileSync(Path.join(process.cwd(), 'config/area/list_code.json'), 'UTF-8')
 list_code = list_code.replace(/^\uFEFF/, '')
@@ -54,9 +57,9 @@ for (let code in data) {
         city_code = code
 
 
-        if (province_json.city) {
-          province_json.city.push(Object.assign({}, city_json))
-        }
+        // if (province_json.city) {
+        //   province_json.city.push(Object.assign({}, city_json))
+        // }
 
         if (!province_json.city) {
           province_json.city = []
@@ -76,9 +79,9 @@ for (let code in data) {
         // city 
         city_code = code
 
-        if (province_json.city) {
-          province_json.city.push(Object.assign({}, city_json))
-        }
+        // if (province_json.city) {
+        //   province_json.city.push(Object.assign({}, city_json))
+        // }
 
         if (!province_json.city) {
           province_json.city = []
