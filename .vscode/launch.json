@@ -37,6 +37,23 @@
       "outFiles": [
         "${workspaceRoot}/lib/**/*.js"
       ]
+    },
+    {
+      "name": "Launc Event",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/lib/event_test.js",
+      "stopOnEntry": false,
+      "args": [],
+      "preLaunchTask": "build",
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceRoot}/lib/**/*.js"
+      ]
     }
   ]
 }

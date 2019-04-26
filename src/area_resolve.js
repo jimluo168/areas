@@ -47,6 +47,7 @@ for (let code in data) {
       name: province[code]
     }
 
+    
   } else {
     var p = code - province_code
     if (province_code && p > 0 && p < 1e4) {    //同省的城市或地区
@@ -114,7 +115,8 @@ for (let code in data) {
 
         }
       } else {
-        area[code] = data[code];            //直辖市
+        //直辖市
+        area[code] = data[code]            
         // area
         area_code = code
 
@@ -131,6 +133,8 @@ for (let code in data) {
 
     }
   }
+  
+  hasCity = false
 }
 
 data_json.push(Object.assign({}, province_json))
