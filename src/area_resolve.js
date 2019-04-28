@@ -13,10 +13,6 @@ function mkdirsSync(dirname) {
   }
 }
 
-function test() {
-    console.log(`abc`)
-}
-
 let list_code = FileSystem.readFileSync(Path.join(process.cwd(), 'config/area/list_code.json'), 'UTF-8')
 list_code = list_code.replace(/^\uFEFF/, '')
 
@@ -31,7 +27,7 @@ let hasCity = false
 let data_json = []
 let province_json = {}
 let city_json = {}
-let area_code =0
+let area_code = 0
 let i = 0
 for (let code in data) {
   if (!(code % 1e4)) {     //获取所有的省级行政单位
@@ -47,7 +43,7 @@ for (let code in data) {
       name: province[code]
     }
 
-    
+
   } else {
     var p = code - province_code
     if (province_code && p > 0 && p < 1e4) {    //同省的城市或地区
@@ -116,7 +112,7 @@ for (let code in data) {
         }
       } else {
         //直辖市
-        area[code] = data[code]            
+        area[code] = data[code]
         // area
         area_code = code
 
@@ -133,7 +129,7 @@ for (let code in data) {
 
     }
   }
-  
+
   hasCity = false
 }
 
@@ -141,7 +137,7 @@ data_json.push(Object.assign({}, province_json))
 
 
 let last_result = {
-  code:200,
+  code: 200,
   data: data_json,
   success: true
 }
@@ -169,7 +165,7 @@ for (let town_file of town_files) {
   }
 
   let town_last_result = {
-    code:200,
+    code: 200,
     data: town_data_json,
     success: true
   }
